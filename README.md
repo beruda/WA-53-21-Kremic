@@ -4,7 +4,7 @@ Programming Challenge for Job Application - ECG data classification
 
 To build the Docker Image for Jupyter Lab ([source](https://github.com/jupyter/docker-stacks/tree/master/tensorflow-notebook)), set your Terminal's working directory to `/path/to/extracted/WA-53-21-Kremic`, and run the following command:
 
-    docker build -t jupyter
+    docker build `pwd` -t jupyter
     
 Next, run:
 
@@ -15,6 +15,8 @@ This should list your local Docker Images. It should look something like:
     REPOSITORY                    TAG         IMAGE ID       CREATED              SIZE
     jupyter                       latest      b48ba2a9f1f0   About a minute ago   7.02GB
     ...
+
+Next, go to [this link](https://www.kaggle.com/shayanfazeli/heartbeat) and download the data as a ZIP file. Extract it into `/path/to/extracted/WA-53-21-Kremic/notebook/data`.
 
 Now, you can run a container with your jupyter image, with the following command:
 
@@ -37,3 +39,7 @@ Before you run the code, the instance needs an aditional Python library. Open th
     pip install tensorflow_addons
 
 Now we can finally run the code. In the Jupyter Lab instance, on the lefthand side, navigate into the `/work` directory, and start the **ECG.ipynb** notebook. From the context menu at the top, you can try `Kernel -> Restart Kernel and Run All`, or play around with the code yourself.
+
+## Closing the Container
+
+Run the command `docker stop docker-jl`
